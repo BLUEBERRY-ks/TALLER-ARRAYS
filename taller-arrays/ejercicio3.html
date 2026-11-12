@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de productos</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.5;
+            color: #222;
+        }
+        h1, h2 { color: #1a365d; }
+        form {
+            display: grid;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            max-width: 350px;
+        }
+        label { font-weight: 500; }
+        input {
+            padding: 8px 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 16px;
+            font-size: 1rem;
+            background: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 0.4rem;
+        }
+        button:hover { background: #2c5282; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th { background: #edf2f7; }
+        #total { font-weight: 600; font-size: 1.1rem; }
+        a { color: #2b6cb0; }
+        .acciones button {
+            padding: 4px 10px;
+            font-size: 0.85rem;
+            background: #e53e3e;
+        }
+        .acciones button:hover { background: #c53030; }
+    </style>
+</head>
+<body>
+    <h1>Inventario de productos</h1>
+
+    <form id="formulario">
+        <label for="producto">Nombre del producto:</label>
+        <input type="text" id="producto" required>
+
+        <label for="precio">Precio unitario:</label>
+        <input type="number" id="precio" min="0" step="any" required>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" step="1" required>
+
+        <button type="submit" id="btnAgregar">Agregar producto</button>
+    </form>
+
+    <h2>Productos registrados</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio unitario</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <h2>Resultados</h2>
+    <p id="total"></p>
+
+    <p><a href="index.html">← Volver al menú</a></p>
+
+    <script src="js/ejercicio3.js"></script>
+</body>
+</html>
